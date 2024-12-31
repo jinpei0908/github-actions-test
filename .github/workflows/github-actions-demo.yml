@@ -22,11 +22,6 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Create a release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1
         with:
-          name: ${{ github.event.pull_request.body }}
-          tag_name: ${{ github.event.pull_request.title }}
-          generate_release_notes: true
-          fail_on_unmatched_files: true
-          files: README.md
-
+          artifacts: README.md
