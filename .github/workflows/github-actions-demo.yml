@@ -1,7 +1,6 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on:
-  pull_request: 
+on: pull_request 
 jobs:
   release:
     name: Release PDF
@@ -18,9 +17,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: |
-        # 日本語フォントを入れる
-        sudo apt install fonts-noto
-        npm run generate
+          # 日本語フォントを入れる
+          sudo apt install fonts-noto
+          npm run generate
       - name: Bump version and push tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.2
