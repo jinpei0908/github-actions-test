@@ -32,3 +32,4 @@ jobs:
           name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
           artifacts: 職務経歴書.pdf
+          artifactContentType: pdf
